@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer_layout"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="650dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="650dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="35dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/comment_layout" />
+
+        <RelativeLayout
+            android:id="@+id/Rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:backgroundTint="#6C6868"
+            android:layout_alignParentBottom="true">
+
+            <EditText
+                android:id="@+id/commentInput"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#6C6868"
+                android:hint="Type Comment"
+                app:layout_constraintEnd_toEndOf="@id/buttonSendComment" />
+
+            <Button
+                android:id="@+id/buttonSendComment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@id/buttonSendComment"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="10dp"
+                android:drawableTop="@drawable/ic_send"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_drawer">
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
